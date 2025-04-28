@@ -28,6 +28,8 @@ Instalación y Uso:
 
 Clona o descarga este repositorio.
 
+https://github.com/Orlando1913/Prueba_OPA.git
+
 Abre el archivo index.html en tu navegador preferido.
 
 Usa el formulario para:
@@ -40,20 +42,23 @@ Borrar todos los elementos si quieres reiniciar el conjunto.
 
 Nota: Los datos son persistentes gracias a localStorage. Si recargas el navegador, los elementos agregados seguirán disponibles.
 
-Estructura del Proyecto
+Estructura del Proyecto:
+
 proyect/
        ├── index.html
        ├── script.js
        └── README.md
 
 Funcionalidades Clave
+
 Agregar elementos: Se añaden a localStorage automáticamente.
 
 Buscar combinación: Utiliza generación de todas las combinaciones posibles y filtra aquellas que cumplen condiciones.
 
 Resetear datos: Elimina todos los datos de localStorage para empezar de cero.
 
-Ejemplo de Uso
+Ejemplo de Uso:
+
 Agrega varios elementos con peso y calorías.
 
 Especifica las restricciones (por ejemplo: mínimo 15 calorías y máximo 10 kg de peso).
@@ -65,4 +70,4 @@ Verás una lista de elementos seleccionados, peso total y calorías totales.
 Puedes borrar todos los datos usando el botón rojo "Borrar Todos los Elementos".
 
 Autor
-Desarrollado como parte de un ejercicio práctico de evaluación técnica.
+Desarrollado por Orlando Henao Cespedes como parte de un ejercicio práctico de evaluación técnica.
