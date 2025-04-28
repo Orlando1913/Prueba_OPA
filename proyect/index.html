@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Excursionistas - Selección de Elementos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container p-5">
+  <h1 class="mb-4">Seleccionador de Elementos para Escalar</h1>
+
+  <h4 class="mt-4">Agregar Nuevo Elemento</h4>
+  <div class="row g-3 mb-5">
+    <div class="col-md-4">
+      <input type="text" id="nombre" class="form-control" placeholder="Nombre (Ej: E6)">
+    </div>
+    <div class="col-md-3">
+      <input type="number" id="peso" class="form-control" placeholder="Peso">
+    </div>
+    <div class="col-md-3">
+      <input type="number" id="calorias" class="form-control" placeholder="Calorías">
+    </div>
+    <div class="col-md-2">
+      <button onclick="agregarNuevoElemento()" class="btn btn-success w-100">Agregar</button>
+    </div>
+  </div>
+
+  <h4 class="mt-4">Buscar Mejor Combinación</h4>
+  <div class="mb-3">
+    <label class="form-label">Mínimo de Calorías</label>
+    <input type="number" id="minCalorias" class="form-control" value="15">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Peso Máximo Permitido</label>
+    <input type="number" id="maxPeso" class="form-control" value="10">
+  </div>
+
+  <div class="row g-3 mb-5 justify-content-center">
+    <div class="col-auto">
+        <button onclick="buscar()" class="btn btn-primary btn-sm">Buscar Óptimos</button>
+    </div>
+    <div class="col-auto">
+        <button onclick="resetearElementos()" class="btn btn-danger btn-sm">Borrar Todo</button>
+    </div>
+ </div>
+
+
+  <div class="mt-4" id="resultado"></div>
+
+  <script src="script.js"></script>
+  <script>
+    function buscar() {
+      const minCalorias = parseInt(document.getElementById('minCalorias').value);
+      const maxPeso = parseInt(document.getElementById('maxPeso').value);
+      const resultado = encontrarElementos(minCalorias, maxPeso);
+
+      const resultadoDiv = document.getElementById('resultado');
+      if (resultado) {
+        resultadoDiv.innerHTML = `
+          <h3>Elementos Seleccionados:</h3>
+          <ul>
+            ${resultado.elementos.map(e => `<li>${e.nombre} (Peso: ${e.peso}, Calorías: ${e.calorias})</li>`).join('')}
+          </ul>
+          <p><strong>Peso Total:</strong> ${resultado.pesoTotal}</p>
+          <p><strong>Calorías Totales:</strong> ${resultado.caloriasTotal}</p>
+        `;
+      } else {
+        resultadoDiv.innerHTML = `<p class="text-danger">No hay combinación viable.</p>`;
+      }
+    }
+
+    function agregarNuevoElemento() {
+      const nombre = document.getElementById('nombre').value.trim();
+      const peso = parseFloat(document.getElementById('peso').value);
+      const calorias = parseFloat(document.getElementById('calorias').value);
+
+      if (nombre && !isNaN(peso) && !isNaN(calorias)) {
+        agregarElemento(nombre, peso, calorias);
+        alert('Elemento agregado exitosamente');
+        document.getElementById('nombre').value = '';
+        document.getElementById('peso').value = '';
+        document.getElementById('calorias').value = '';
+      } else {
+        alert('Por favor completa todos los campos correctamente.');
+      }
+    }
+  </script>
+</body>
+</html>
