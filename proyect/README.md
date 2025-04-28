@@ -1,73 +1,76 @@
-Selección Óptima de Elementos para Excursionistas
-Descripción
-Este proyecto es una aplicación web desarrollada en JavaScript puro, utilizando Bootstrap para el estilo. Permite a excursionistas seleccionar la combinación óptima de elementos basada en restricciones de peso máximo y calorías mínimas necesarias para una expedición de escalada.
+# 🧗‍♂️ Reto Técnico - Excursionistas: Selección de Equipos Óptimos
 
-Está orientado como una solución de prueba técnica, demostrando habilidades en persistencia de datos en cliente, manipulación de DOM, manejo de localStorage y combinatoria básica.
+Este proyecto consiste en una aplicación web que ayuda a seleccionar los elementos óptimos para escalar un risco, cumpliendo con un mínimo de calorías requeridas y un peso máximo permitido.
 
-Características Principales:
+---
 
-Persistencia de datos mediante localStorage.
+## 🚀 Tecnologías Utilizadas
 
-Agregar nuevos elementos dinámicamente.
+- **HTML5** 
+- **CSS3** (custom styles + Bootstrap 5.3)
+- **JavaScript (Vanilla)** 
+- **Bootstrap 5.3** para estilos responsivos y modernos.
+- **LocalStorage** para persistencia de datos en el navegador.
 
-Búsqueda óptima de combinaciones que cumplen requisitos de calorías mínimas y peso máximo.
+---
 
-Resetear (borrar todos los elementos) con confirmación.
+## 🎯 Requerimientos Cubiertos
 
-Diseño responsivo usando Bootstrap.
+- Ingreso manual de elementos (peso y calorías).
+- Selección automática de la combinación óptima que:
+  - Cumple el mínimo de calorías.
+  - No excede el peso máximo.
+  - Minimiza el peso total.
+- Eliminación de todos los elementos.
+- Persistencia de los datos ingresados aún al recargar la página (gracias a `localStorage`).
+- Interfaz limpia, adaptativa y moderna.
 
-Tecnologías Utilizadas:
+---
 
-HTML5
+## ⚙️ Cómo ejecutar el proyecto
 
-CSS3 (via Bootstrap 5)
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Orlando1913/Prueba_OPA.git
 
-JavaScript (vanilla)
+Abre el archivo index.html directamente en tu navegador.
+(No requiere instalación adicional ni servidores externos)
 
-Instalación y Uso:
+/proyect
+│
+├── index.html          # Página principal
+├── app.js              # Lógica de aplicación
+├── estilos.css         # Estilos personalizados
+└── README.md           # Documentación técnica
 
-Clona o descarga este repositorio.
+💾 Persistencia de Datos
+El proyecto utiliza localStorage para almacenar los elementos agregados, de manera que:
 
-https://github.com/Orlando1913/Prueba_OPA.git
+Los datos no se pierden al recargar la página.
 
-Abre el archivo index.html en tu navegador preferido.
+La experiencia de usuario es más consistente.
 
-Usa el formulario para:
+📈 Escalabilidad
+El proyecto está modularizado, permitiendo en el futuro:
 
-Agregar nuevos elementos indicando nombre, peso y calorías.
+Integrar un backend para almacenamiento en bases de datos.
 
-Buscar la mejor combinación posible de elementos según restricciones.
+Añadir autenticación de usuarios.
 
-Borrar todos los elementos si quieres reiniciar el conjunto.
+Expandir a una Progressive Web App (PWA) para funcionar offline.
 
-Nota: Los datos son persistentes gracias a localStorage. Si recargas el navegador, los elementos agregados seguirán disponibles.
+El uso de Bootstrap asegura compatibilidad y responsividad en Windows, macOS y Linux.
 
-Estructura del Proyecto:
+🛠️ Consideraciones de Desarrollo
+Código optimizado para fácil mantenimiento.
 
-proyect/
-       ├── index.html
-       ├── script.js
-       └── README.md
+Separación de responsabilidades (HTML / CSS / JS).
 
-Funcionalidades Clave
+Control de versiones recomendado mediante GitHub.
 
-Agregar elementos: Se añaden a localStorage automáticamente.
+👨‍💻 Autor
+Nombre: Orlando Henao Cespedes 
 
-Buscar combinación: Utiliza generación de todas las combinaciones posibles y filtra aquellas que cumplen condiciones.
+Correo: orlandohenao7@gmail.com
 
-Resetear datos: Elimina todos los datos de localStorage para empezar de cero.
-
-Ejemplo de Uso:
-
-Agrega varios elementos con peso y calorías.
-
-Especifica las restricciones (por ejemplo: mínimo 15 calorías y máximo 10 kg de peso).
-
-Presiona "Buscar Elementos Óptimos".
-
-Verás una lista de elementos seleccionados, peso total y calorías totales.
-
-Puedes borrar todos los datos usando el botón rojo "Borrar Todos los Elementos".
-
-Autor
-Desarrollado por Orlando Henao Cespedes como parte de un ejercicio práctico de evaluación técnica.
+LinkedIn: www.linkedin.com/in/orlando-henao-cespedes
